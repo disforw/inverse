@@ -1,0 +1,10 @@
+{
+  "domain": "inverse",
+  "name": "Inverse Switch",
+  "codeowners": ["@disforw"],
+  "config_flow": true,
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "quality_scale": "internal",
+  "version": "1.0"
+}
