@@ -1,4 +1,4 @@
-"""Config flow for Switch as X integration."""
+"""Config flow for Inverse Switch integration."""
 from __future__ import annotations
 
 from collections.abc import Mapping
@@ -30,7 +30,7 @@ CONFIG_FLOW = {
 
 
 class SwitchAsXConfigFlowHandler(SchemaConfigFlowHandler, domain=DOMAIN):
-    """Handle a config flow for Switch as X."""
+    """Handle a config flow for Inverse Switch."""
 
     config_flow = CONFIG_FLOW
 
