@@ -1,4 +1,4 @@
-"""Component to wrap switch entities in entities of other domains."""
+"""Component to wrap a switch entity with an inverse switch."""
 from __future__ import annotations
 
 import logging
@@ -45,7 +45,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     except vol.Invalid:
         # The entity is identified by an unknown entity registry ID
         _LOGGER.error(
-            "Failed to setup switch_as_x for unknown entity %s",
+            "Failed to setup inverse switch for unknown entity %s",
             entry.options[CONF_ENTITY_ID],
         )
         return False
