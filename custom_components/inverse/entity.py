@@ -140,7 +140,7 @@ class BaseToggleEntity(BaseEntity, ToggleEntity):
         """Forward the turn_on command to the switch in this wrapped switch."""
         await self.hass.services.async_call(
             SWITCH_DOMAIN,
-            SERVICE_TURN_ON,
+            SERVICE_TURN_OFF,
             {ATTR_ENTITY_ID: self._switch_entity_id},
             blocking=True,
             context=self._context,
@@ -150,7 +150,7 @@ class BaseToggleEntity(BaseEntity, ToggleEntity):
         """Forward the turn_off command to the switch in this wrapped switch."""
         await self.hass.services.async_call(
             SWITCH_DOMAIN,
-            SERVICE_TURN_OFF,
+            SERVICE_TURN_ON,
             {ATTR_ENTITY_ID: self._switch_entity_id},
             blocking=True,
             context=self._context,
