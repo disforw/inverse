@@ -7,12 +7,10 @@ import voluptuous as vol
 
 from homeassistant.components.homeassistant import exposed_entities
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import CONF_ENTITY_ID
+from homeassistant.const import CONF_ENTITY_ID, Platform
 from homeassistant.core import Event, HomeAssistant, callback
 from homeassistant.helpers import device_registry as dr, entity_registry as er
 from homeassistant.helpers.event import async_track_entity_registry_updated_event
-
-from .const import CONF_TARGET_DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -89,7 +87,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     device_id = async_add_to_device(hass, entry, entity_id)
 
     await hass.config_entries.async_forward_entry_setups(
-        entry, (entry.options[CONF_TARGET_DOMAIN],)
+        entry, (Platform.SWITCH,)
     )
     return True
 
@@ -97,7 +95,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Unload a config entry."""
     return await hass.config_entries.async_unload_platforms(
-        entry, (entry.options[CONF_TARGET_DOMAIN],)
+        entry, (Platform.SWITCH,)
     )
 
 
