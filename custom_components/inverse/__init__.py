@@ -120,15 +120,15 @@ async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
     if switch_entity_entry.hidden_by == er.RegistryEntryHider.INTEGRATION:
         registry.async_update_entity(switch_entity_id, hidden_by=None)
 
-    switch_as_x_entries = er.async_entries_for_config_entry(registry, entry.entry_id)
-    if not switch_as_x_entries:
+    switch_entries = er.async_entries_for_config_entry(registry, entry.entry_id)
+    if not switch_entries:
         return
 
-    switch_as_x_entry = switch_as_x_entries[0]
+    switch_entry = switch_entries[0]
 
     # Restore assistant expose settings
     expose_settings = exposed_entities.async_get_entity_settings(
-        hass, switch_as_x_entry.entity_id
+        hass, switch_entry.entity_id
     )
     for assistant, settings in expose_settings.items():
         if (should_expose := settings.get("should_expose")) is None:
