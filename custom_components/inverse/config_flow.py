@@ -17,11 +17,6 @@ from homeassistant.helpers.schema_config_entry_flow import (
 from .const import CONF_TARGET_DOMAIN, DOMAIN
 
 TARGET_DOMAIN_OPTIONS = [
-    selector.SelectOptionDict(value=Platform.COVER, label="Cover"),
-    selector.SelectOptionDict(value=Platform.FAN, label="Fan"),
-    selector.SelectOptionDict(value=Platform.LIGHT, label="Light"),
-    selector.SelectOptionDict(value=Platform.LOCK, label="Lock"),
-    selector.SelectOptionDict(value=Platform.SIREN, label="Siren"),
     selector.SelectOptionDict(value=Platform.SWITCH, label="Inverse"),
 ]
 
