@@ -35,7 +35,7 @@ async def async_setup_entry(
     )
 
 
-class InvertSwitch(BaseToggleEntity, LightEntity):
+class InvertSwitch(BaseToggleEntity, SwitchEntity):
     """Represents a Switch as Inversed."""
     
     async def async_turn_on(self) -> None:
