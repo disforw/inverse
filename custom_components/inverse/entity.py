@@ -1,4 +1,4 @@
-"""Base entity for the Switch as X integration."""
+"""Base entity for the Inverse Switch integration."""
 from __future__ import annotations
 
 from typing import Any
@@ -34,7 +34,7 @@ class BaseEntity(Entity):
         switch_entity_id: str,
         unique_id: str,
     ) -> None:
-        """Initialize Switch as an X."""
+        """Initialize Switch."""
         registry = er.async_get(hass)
         device_registry = dr.async_get(hass)
         wrapped_switch = registry.async_get(switch_entity_id)
@@ -137,7 +137,7 @@ class BaseToggleEntity(BaseEntity, ToggleEntity):
     """Represents a Switch as a ToggleEntity."""
 
     async def async_turn_on(self, **kwargs: Any) -> None:
-        """Forward the turn_on command to the switch in this light switch."""
+        """Forward the turn_on command to the switch in this wrapped switch."""
         await self.hass.services.async_call(
             SWITCH_DOMAIN,
             SERVICE_TURN_ON,
@@ -147,7 +147,7 @@ class BaseToggleEntity(BaseEntity, ToggleEntity):
         )
 
     async def async_turn_off(self, **kwargs: Any) -> None:
-        """Forward the turn_off command to the switch in this light switch."""
+        """Forward the turn_off command to the switch in this wrapped switch."""
         await self.hass.services.async_call(
             SWITCH_DOMAIN,
             SERVICE_TURN_OFF,
