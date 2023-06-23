@@ -29,7 +29,7 @@ CONFIG_FLOW = {
 }
 
 
-class SwitchAsXConfigFlowHandler(SchemaConfigFlowHandler, domain=DOMAIN):
+class InverseSwitchFlowHandler(SchemaConfigFlowHandler, domain=DOMAIN):
     """Handle a config flow for Inverse Switch."""
 
     config_flow = CONFIG_FLOW
