@@ -1,6 +1,8 @@
 """Inverse support for switch entities."""
 from __future__ import annotations
 
+from typing import Any
+
 from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN, SwitchEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_ENTITY_ID
@@ -37,9 +39,16 @@ async def async_setup_entry(
 
 class InvertSwitch(BaseToggleEntity, SwitchEntity):
     """Represents a Switch as Inversed."""
-    
-    async def async_turn_on(self) -> None:
+
+    @property
+    def is_on(self) -> bool | None:
+        """Return true if the entity is off."""
+        return not self._attr_is_on
+
+    async def async_turn_on(self, **kwargs: Any) -> None:
+        """Turn off original switch."""
         await super().async_turn_off()
-    
-    async def async_turn_off(self) -> None:
+
+    async def async_turn_off(self, **kwargs: Any) -> None:
+        """Turn on original switch."""
         await super().async_turn_on()
