@@ -14,11 +14,7 @@ from homeassistant.helpers.schema_config_entry_flow import (
     wrapped_entity_config_entry_title,
 )
 
-from .const import CONF_TARGET_DOMAIN, DOMAIN
-
-TARGET_DOMAIN_OPTIONS = [
-    selector.SelectOptionDict(value=Platform.SWITCH, label="Inverse"),
-]
+from .const import DOMAIN
 
 CONFIG_FLOW = {
     "user": SchemaFlowFormStep(
@@ -26,9 +22,6 @@ CONFIG_FLOW = {
             {
                 vol.Required(CONF_ENTITY_ID): selector.EntitySelector(
                     selector.EntitySelectorConfig(domain=Platform.SWITCH),
-                ),
-                vol.Required(CONF_TARGET_DOMAIN): selector.SelectSelector(
-                    selector.SelectSelectorConfig(options=TARGET_DOMAIN_OPTIONS),
                 ),
             }
         )
