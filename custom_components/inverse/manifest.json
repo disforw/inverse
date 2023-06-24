@@ -2,7 +2,7 @@
   "domain": "inverse",
   "name": "Inverse Switch",
   "codeowners": ["@disforw"],
-  "config_flow": true",
+  "config_flow": true,
   "documentation": "",
   "integration_type": "helper",
   "iot_class": "calculated",
