@@ -8,3 +8,5 @@ a template in YAML in order to accomplish the same thing.
 
 
 Access this feature from the Home Assistant Helper menu.
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
