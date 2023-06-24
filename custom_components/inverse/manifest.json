@@ -3,7 +3,7 @@
   "name": "Inverse Switch",
   "codeowners": ["@disforw"],
   "config_flow": true,
-  "documentation": "",
+  "documentation": "https://github.com/disforw/inverse_switch/blob/main/README.md",
   "integration_type": "helper",
   "iot_class": "calculated",
   "quality_scale": "internal",
