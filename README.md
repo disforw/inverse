@@ -1,5 +1,5 @@
 # Inverse Switch
-Create an inverse switch from a Home Assistant switch entity.
+Create an inverse switch from a Home Assistant switch entity using the UI.
 
 This custom integration will add a helper option called "Inverse Switch"
 which will allow you to select an existing switch and create a new entity
