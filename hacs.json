@@ -1,7 +1,4 @@
 {
     "name": "Inverse",
-    "render_readme": true,
-    "hide_default_branch": false,
-    "homeassistant": "2023.3.0",
-    "zip_release": false
+    "render_readme": true
 }
